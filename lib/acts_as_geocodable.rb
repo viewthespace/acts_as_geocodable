@@ -1,3 +1,6 @@
+require "pry"
+require "pry-byebug"
+
 require "active_record"
 require "active_support"
 require "graticule"
@@ -8,7 +11,7 @@ require "acts_as_geocodable/remote_location"
 
 module ActiveSupport::Callbacks::ClassMethods
   def without_callback(*args, &block)
-    skip_callback(*args)
+    skip_callback(*args, raise: false)
     yield
     set_callback(*args)
   end

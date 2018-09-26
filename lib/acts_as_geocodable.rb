@@ -11,7 +11,11 @@ require "acts_as_geocodable/remote_location"
 
 module ActiveSupport::Callbacks::ClassMethods
   def without_callback(*args, &block)
-    skip_callback(*args, raise: false)
+    if ActiveRecord.version.to_s.to_i < 5
+      skip_callback(*args)
+    else
+      skip_callback(*args, raise: false)
+    end
     yield
     set_callback(*args)
   end

@@ -1,7 +1,3 @@
-mysql:
-  adapter: mysql2
-  username: root
-  database: acts_as_geocodable_test
 postgresql:
   adapter: postgresql
   username: postgres

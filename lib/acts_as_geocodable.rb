@@ -1,6 +1,3 @@
-require "pry"
-require "pry-byebug"
-
 require "active_record"
 require "active_support"
 require "graticule"
